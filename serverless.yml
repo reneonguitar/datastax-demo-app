@@ -1,0 +1,26 @@
+org: reneonguitar
+app: datastax
+service: demo-app
+
+provider:
+  name: aws
+  region: us-west-2
+
+# serverless plugin install -n serverless-lift
+plugins:
+  - serverless-lift
+
+# functions:
+# ...
+
+# custom:
+#   domains:
+#     dev: dev.somewhere.com
+#     prod: www.somewhere.com
+
+constructs:
+  app:
+    type: single-page-app
+    path: .output/public
+    # domain: ${self:custom.domains.${opt:stage, 'dev'}}
+    # certificate: <your-cert-arn-here>
